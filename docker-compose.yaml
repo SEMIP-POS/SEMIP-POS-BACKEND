@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: semip-pos-db
+    environment:
+      POSTGRES_DB: semip-pos-backend
+      POSTGRES_USER: firman
+      POSTGRES_PASSWORD: admin1234
+    ports:
+      - "5431:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U firman -d semip-pos-backend"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

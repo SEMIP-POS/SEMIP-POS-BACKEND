@@ -1,0 +1,33 @@
+# ide
+.DS_STORE
+.idea
+.direnv
+
+# config
+config.yaml
+secret.yaml
+
+# test
+*.html
+# ignore html except pdf template
+!templates/*/*.html
+
+# dir
+tmp/
+
+# vendor
+vendor
+
+# sonar locally
+sonar-project.properties
+.scannerwork
+
+# downloader config
+downloader_config.json
+.vscode/launch.json
+
+# coverage out
+coverage.out
+
+# .air.toml
+.air.toml
