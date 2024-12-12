@@ -6,14 +6,14 @@ services:
     container_name: semip-pos-db
     environment:
       POSTGRES_DB: semip-pos-backend
-      POSTGRES_USER: firman
-      POSTGRES_PASSWORD: admin1234
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your-password
     ports:
-      - "5431:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U firman -d semip-pos-backend"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d semip-pos-backend"]
       interval: 10s
       timeout: 5s
       retries: 5
